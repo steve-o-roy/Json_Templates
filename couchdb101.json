@@ -1652,7 +1652,7 @@
   },
   "timezone": "",
   "title": "CouchDb",
-  "uid": "y5CPyMWGk",
+  "uid": "y5CPyMWGk-roy",
   "version": 5,
   "description": "Many CouchDb metrics from CouchDB Prometheus Exporter (https://github.com/gesellix/couchdb-prometheus-exporter)"
 }
