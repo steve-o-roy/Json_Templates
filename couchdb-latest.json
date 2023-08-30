@@ -71,7 +71,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "Selected Couchdb Database Data Size",
       "fieldConfig": {
@@ -135,7 +135,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "builder",
           "expr": "couchdb_database_data_size{db_name=\"$db_name\"}",
@@ -152,7 +152,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "Total number of databases in the cluster",
       "fieldConfig": {
@@ -216,7 +216,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "expr": "avg_over_time(couchdb_httpd_databases_total[5m])",
           "format": "time_series",
@@ -230,7 +230,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "Number of CouchDB Nodes Available",
       "fieldConfig": {
@@ -313,7 +313,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -349,7 +349,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "Total CouchDB HTTPD Requests per Node",
       "fieldConfig": {
@@ -401,7 +401,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "code",
           "expr": "couchdb_httpd_requests{node_name=~\".*\"}",
@@ -418,7 +418,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "CouchDB HTTP Request per Method per node",
       "fieldConfig": {
@@ -470,7 +470,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "builder",
           "expr": "couchdb_httpd_request_methods{node_name=~\"couchdb.*\",method=~\".*\"}",
@@ -488,7 +488,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "number of clients for continuous _changes per node",
       "fieldConfig": {
@@ -539,7 +539,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "code",
           "expr": "couchdb_httpd_clients_requesting_changes{node_name=~\".*\"}",
@@ -556,7 +556,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
       },
       "description": "CouchDB Open Databases per Node",
       "fieldConfig": {
@@ -606,7 +606,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
           },
           "editorMode": "code",
           "expr": "couchdb_httpd_open_databases{node_name=~\".*\"}",
@@ -632,7 +632,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
         },
         "definition": "couchdb_database_info",
         "hide": 0,
