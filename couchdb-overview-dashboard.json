@@ -229,6 +229,362 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 85
+              }
+            ]
+          },
+          "unit": "bits"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 0,
+        "y": 3
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 6
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "couchdb_database_data_size{db_name=\"$db_name\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{db_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": " Database Size",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cluster1"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 8,
+        "y": 3
+      },
+      "id": 28,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "avg(couchdb_database_doc_count{db_name=\"$db_name\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{node_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Database Document Count",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cluster1"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 3
+      },
+      "id": 29,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "avg_over_time(couchdb_httpd_databases_total[5m])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{node_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Database Total",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cluster1"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 6
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "avg(couchdb_httpd_database_writes{instance=\"$instance\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{node_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Database Writes",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "palette-classic"
           },
           "custom": {
@@ -295,10 +651,10 @@
       "gridPos": {
         "h": 5,
         "w": 12,
-        "x": 0,
-        "y": 3
+        "x": 12,
+        "y": 6
       },
-      "id": 4,
+      "id": 27,
       "options": {
         "legend": {
           "calcs": [],
@@ -382,6 +738,118 @@
                 "value": 80
               }
             ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cluster1"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 11
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "avg(couchdb_httpd_view_reads{instance=\"$instance\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{node_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "View Reads",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -403,7 +871,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 3
+        "y": 11
       },
       "id": 5,
       "options": {
@@ -515,119 +983,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 8
-      },
-      "id": 6,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-          },
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "avg(couchdb_httpd_database_writes{instance=\"$instance\"})",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "instant": false,
-          "legendFormat": "{{node_name}}",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        }
-      ],
-      "title": "Database Writes",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "cluster1"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 8
+        "y": 16
       },
       "id": 7,
       "options": {
@@ -738,120 +1094,8 @@
       "gridPos": {
         "h": 5,
         "w": 12,
-        "x": 0,
-        "y": 13
-      },
-      "id": 8,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-          },
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "avg(couchdb_httpd_view_reads{instance=\"$instance\"})",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "instant": false,
-          "legendFormat": "{{node_name}}",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        }
-      ],
-      "title": "View Reads",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "cluster1"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 12,
         "x": 12,
-        "y": 13
+        "y": 16
       },
       "id": 13,
       "options": {
@@ -893,7 +1137,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 12,
       "panels": [],
@@ -946,8 +1190,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -976,7 +1219,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 19
+        "y": 22
       },
       "id": 9,
       "options": {
@@ -1058,8 +1301,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1088,7 +1330,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 19
+        "y": 22
       },
       "id": 14,
       "options": {
@@ -1170,8 +1412,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1200,7 +1441,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 27
       },
       "id": 15,
       "options": {
@@ -1274,7 +1515,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 27
       },
       "id": 16,
       "options": {
@@ -1363,8 +1604,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1393,7 +1633,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 29
+        "y": 32
       },
       "id": 17,
       "options": {
@@ -1475,8 +1715,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1504,7 +1743,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 29
+        "y": 32
       },
       "id": 18,
       "options": {
@@ -1546,7 +1785,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 37
       },
       "id": 19,
       "panels": [],
@@ -1599,8 +1838,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1628,7 +1866,7 @@
         "h": 4,
         "w": 8,
         "x": 0,
-        "y": 35
+        "y": 38
       },
       "id": 20,
       "options": {
@@ -1710,8 +1948,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1739,7 +1976,7 @@
         "h": 4,
         "w": 8,
         "x": 8,
-        "y": 35
+        "y": 38
       },
       "id": 21,
       "options": {
@@ -1821,8 +2058,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1850,7 +2086,7 @@
         "h": 4,
         "w": 8,
         "x": 16,
-        "y": 35
+        "y": 38
       },
       "id": 22,
       "options": {
@@ -1932,8 +2168,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1961,7 +2196,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 39
+        "y": 42
       },
       "id": 23,
       "options": {
@@ -2043,8 +2278,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2072,7 +2306,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 42
       },
       "id": 26,
       "options": {
@@ -2154,8 +2388,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2183,7 +2416,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 46
       },
       "id": 25,
       "options": {
@@ -2265,8 +2498,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2294,7 +2526,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 46
       },
       "id": 24,
       "options": {
@@ -2339,7 +2571,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "192.168.56.15:9984",
           "value": "192.168.56.15:9984"
         },
@@ -2366,37 +2598,9 @@
       },
       {
         "current": {
-          "isNone": true,
           "selected": false,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-        },
-        "definition": "label_values(job{$job=\"$job\"},up)",
-        "hide": 0,
-        "includeAll": false,
-        "label": "Job",
-        "multi": false,
-        "name": "job",
-        "options": [],
-        "query": {
-          "query": "label_values(job{$job=\"$job\"},up)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "medic",
-          "value": "medic"
+          "text": "medic-user-rmayore-meta",
+          "value": "medic-user-rmayore-meta"
         },
         "datasource": {
           "type": "prometheus",
@@ -2426,8 +2630,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "couchDB Overview Dashboard Copy",
+  "title": "couchDB Overview Dashboard",
   "uid": "eccc4209-0abe-4e87-a702-5c0889347608",
-  "version": 12,
+  "version": 22,
   "weekStart": ""
 }

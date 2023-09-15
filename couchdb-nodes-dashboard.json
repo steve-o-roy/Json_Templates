@@ -1300,34 +1300,6 @@
       },
       {
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "eaf9b61a-7eda-484d-8e67-9c2a8ac9df2e"
-        },
-        "definition": "label_values(job{$job=\"$job\"},up)",
-        "hide": 0,
-        "includeAll": false,
-        "label": "Job",
-        "multi": false,
-        "name": "job",
-        "options": [],
-        "query": {
-          "query": "label_values(job{$job=\"$job\"},up)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
           "selected": false,
           "text": "medic-logs",
           "value": "medic-logs"
@@ -1362,6 +1334,6 @@
   "timezone": "",
   "title": "couchDB Nodes Dashboard",
   "uid": "f01137da-2a42-4dff-a7c9-daaf819d94c4",
-  "version": 18,
+  "version": 25,
   "weekStart": ""
 }
